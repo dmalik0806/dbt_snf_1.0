@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: raw_emp
+      columns:
+      - name: empno
+        data_tests:
+          - unique
+          - not_null
+
+    - name: transformed_emp
+      columns:
+      - name: dept_name
+        data_tests:
+          - accepted_values:
+              arguments:
+                    values: ['ACCOUNTING','RESEARCH','SALES','OPERATIONS']
+      
+    
